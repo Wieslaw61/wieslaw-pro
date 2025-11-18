@@ -2,59 +2,17 @@
 <html lang="pl">
 <head>
   <meta charset="UTF-8">
-  <title>wieslaw.pro</title>
-  <style>
-    body {
-      background: #111;
-      color: #eee;
-      font-family: 'Courier New';
-      text-align: center;
-      margin: 0;
-      padding: 0;
-    }
-    .typewriter {
-      overflow: hidden;
-      border-right: .15em solid orange;
-      white-space: nowrap;
-      animation: typing 3s steps(30, end), blink .75s step-end infinite;
-    }
-    @keyframes typing {
-      from { width: 0 }
-      to { width: 100% }
-    }
-    @keyframes blink {
-      from, to { border-color: transparent }
-      50% { border-color: orange }
-    }
-    button {
-      padding: 10px 20px;
-      font-size: 1.2em;
-      margin-top: 20px;
-    }
-    canvas {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-    }
-  </style>
+  <title>Test obrazka</title>
 </head>
-<body>
-  <h1 class="typewriter">Tu zaczyna się moja orkiestra 🎶</h1>
+<body style="background:#222; text-align:center; color:#eee;">
 
-  <a href="https://home.wieslaw.pro" style="text-decoration:none;">
-    <button>Wejdź do Home Assistant</button>
-  </a>
+  <h1>Test kasety 🎶</h1>
 
-  <img src="images/kaseta.png" alt="Kaseta MP3" style="width:300px; margin-top:50px;">
-  <h1>Witaj w cyfrowej stolarni HAOS-a</h1>
-  <p>Tu każdy reset to rytuał, a każdy projekt to nowa kompozycja.</p>
+  <!-- Obrazek z ramką -->
+  <img src="images/kaseta.png" alt="Kaseta MP3" 
+       style="width:300px; margin-top:50px; border:3px solid red;">
 
-  <canvas id="stars"></canvas>
-  <script>
-    // prosty efekt gwiazd — mogę Ci go rozwinąć, jeśli chcesz
-  </script>
+  <p>Jeśli widzisz czerwony prostokąt, obrazek działa poprawnie.</p>
+
 </body>
 </html>
