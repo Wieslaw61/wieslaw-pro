@@ -1,117 +1,183 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
+  <!-- ====== STYLE DLA NOWYCH SEKCJI ====== -->
+  <!-- Tutaj zaczyna się CSS, czyli opis wyglądu strony -->
+<style>
+  /* Cards layout = układ prostokątów (kart) */
+  .cards {
+    display: grid; /* ustawiamy siatkę */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* karty układają się obok siebie, minimum 280px szerokości */
+    gap: 24px; /* odstęp między kartami */
+    margin-top: 16px; /* odstęp od góry sekcji */
+  }
+
+  /* Wygląd pojedynczej karty */
+  .card {
+    background: #1b263b; /* ciemne tło */
+    border: 1px solid #415a77; /* cienka ramka */
+    border-radius: 12px; /* zaokrąglone rogi */
+    padding: 20px; /* odstęp wewnątrz karty */
+    box-shadow: 0 6px 24px rgba(0,0,0,0.25); /* cień pod kartą */
+  }
+
+  /* Nagłówek w karcie (np. tytuł) */
+  .card h3 {
+    color: #ff7f11; /* pomarańczowy kolor nagłówka */
+    margin-top: 0; /* brak dodatkowego odstępu na górze */
+  }
+
+  /* Lista w karcie (punkty) */
+  .card ul {
+    list-style: none; /* bez kropek przy liście */
+    padding: 0; /* brak dodatkowych odstępów */
+    margin: 12px 0 0 0; /* odstęp od tekstu powyżej */
+  }
+  .card ul li {
+    margin-bottom: 8px; /* odstęp między punktami listy */
+  }
+
+  /* Nagłówki sekcji (np. "Bezpieczeństwo i alarmy") */
+  #security h2, #support h2 {
+    color: #e0e1dd; /* jasny kolor tekstu */
+    border-left: 4px solid #ff7f11; /* pomarańczowa kreska po lewej stronie */
+    padding-left: 10px; /* odstęp między kreską a tekstem */
+  }
+
+  /* Specjalne kolory ramek dla kart w sekcjach */
+  #security .card { border-color: #c94141; } /* czerwony akcent dla bezpieczeństwa */
+  #support .card { border-color: #2e7bcf; } /* niebieski akcent dla pomocy technicznej */
+
+  /* Odstępy dla całych sekcji */
+  section#security, section#support {
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+</style>
+
+  <!-- Ustawienia strony -->
   <meta charset="UTF-8">
-  <title>VS Code – Ściąga skrótów</title>
+  <title>WO61 – Techniczna Symfonia</title>
   <style>
+    /* Ogólny wygląd strony */
     body {
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      color: #222;
-      padding: 40px;
+      font-family: 'Source Code Pro', monospace; /* czcionka techniczna */
+      background-color: #0d1b2a; /* ciemne tło strony */
+      color: #e0e1dd; /* jasny tekst */
+      margin: 0; /* brak marginesów */
+      padding: 0; /* brak odstępów */
     }
-    h1 {
-      text-align: center;
-      color: #333;
+
+    /* Pasek nagłówka (góra strony) */
+    header {
+      background: #1b263b; /* ciemniejsze tło */
+      padding: 20px; /* odstęp wewnątrz */
+      text-align: center; /* tekst wyśrodkowany */
     }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 20px;
-      background: #fff;
+
+    /* Menu językowe */
+    nav {
+      margin-top: 10px; /* odstęp od nagłówka */
     }
-    th, td {
-      border: 1px solid #999;
-      padding: 12px;
-      text-align: left;
+    nav a {
+      color: #e0e1dd; /* jasny kolor linków */
+      margin: 0 10px; /* odstęp między linkami */
+      text-decoration: none; /* bez podkreślenia */
     }
-    th {
-      background: #415a77;
-      color: #fff;
+
+    /* Ogólny wygląd sekcji */
+    section {
+      padding: 40px; /* odstęp wewnątrz sekcji */
+      border-bottom: 1px solid #415a77; /* cienka linia oddzielająca sekcje */
     }
-    tr:nth-child(even) {
-      background: #e0e1dd;
+
+    /* Kolory nagłówków */
+    h1, h2 {
+      color: #ff7f11; /* pomarańczowy */
+    }
+
+    /* Stopka (dół strony) */
+    footer {
+      background: #1b263b; /* ciemne tło */
+      text-align: center; /* tekst wyśrodkowany */
+      padding: 20px; /* odstęp wewnątrz */
+      font-size: 0.8em; /* mniejsza czcionka */
     }
   </style>
 </head>
 <body>
-  <h1>VS Code – Ściąga skrótów klawiszowych</h1>
-  <table>
-    <tr>
-      <th>Skrót</th>
-      <th>Co robi</th>
-      <th>Na chłopski rozum</th>
-    </tr>
-    <tr>
-      <td>Ctrl + S</td>
-      <td>Save</td>
-      <td>Zapisz plik (nuty w partyturze)</td>
-    </tr>
-    <tr>
-      <td>Ctrl + O</td>
-      <td>Open</td>
-      <td>Otwórz plik (wyciągnij zeszyt)</td>
-    </tr>
-    <tr>
-      <td>Ctrl + N</td>
-      <td>New File</td>
-      <td>Nowy plik (czysta kartka)</td>
-    </tr>
-    <tr>
-      <td>Ctrl + Shift + P</td>
-      <td>Command Palette</td>
-      <td>Menu wszystkich poleceń (spis treści)</td>
-    </tr>
-    <tr>
-      <td>Ctrl + /</td>
-      <td>Toggle Comment</td>
-      <td>Dodaj/usuń komentarz (notatka na marginesie)</td>
-    </tr>
-    <tr>
-      <td>Alt + Z</td>
-      <td>Toggle Word Wrap</td>
-      <td>Zawijanie linii (tekst nie ucieka poza ekran)</td>
-    </tr>
-    <tr>
-      <td>Ctrl + B</td>
-      <td>Toggle Sidebar</td>
-      <td>Włącz/wyłącz boczny panel (lista plików)</td>
-    </tr>
-    <tr>
-      <td>Ctrl + `</td>
-      <td>Open Terminal</td>
-      <td>Otwórz konsolę (okno poleceń)</td>
-    </tr>
-    <tr>
-      <td>Ctrl + Shift + E</td>
-      <td>Explorer</td>
-      <td>Pokaż pliki projektu (lista nut)</td>
-    </tr>
-    <tr>
-      <td>Ctrl + Shift + X</td>
-      <td>Extensions</td>
-      <td>Otwórz dodatki (nowe instrumenty)</td>
-    </tr>
-    <tr>
-      <td>Ctrl + Shift + F</td>
-      <td>Find in Files</td>
-      <td>Szukaj w całym projekcie (lupa)</td>
-    </tr>
-    <tr>
-      <td>Ctrl + Shift + H</td>
-      <td>Replace in Files</td>
-      <td>Zamień tekst w całym projekcie</td>
-    </tr>
-    <tr>
-      <td>Ctrl + Shift + I</td>
-      <td>Format Document</td>
-      <td>Uporządkuj kod (jak Prettier)</td>
-    </tr>
-    <tr>
-      <td>Ctrl + Shift + L</td>
-      <td>Select All Occurrences</td>
-      <td>Zaznacz wszystkie takie same słowa (np. wszystkie „div”)</td>
-    </tr>
-  </table>
-</body>
-</html>
+  <!-- Nagłówek strony -->
+  <header>
+    <h1>WO61 – Technika jako muzyka</h1>
+    <!-- Menu językowe -->
+    <nav>
+      <a href="/pl">PL</a> | <a href="/en">EN</a> | <a href="/sv">SV</a>
+    </nav>
+  </header>
+
+  <!-- Sekcja "O mnie" -->
+  <section id="about">
+    <h2>O mnie</h2>
+    <p>Transformuję techniczne wyzwania w muzyczne rytuały. Od Home Assistanta po PLC – każdy projekt to nowa symfonia.</p>
+  </section>
+
+  <!-- Sekcja "Projekty" -->
+  <section id="projects">
+    <h2>Projekty</h2>
+    <ul>
+      <li>Home Assistant OS na Raspberry Pi – orkiestra urządzeń</li>
+      <li>VPN Fusion – cyfrowa orkiestra instrumentów</li>
+      <li>3D druk i CNC – warsztat symfoniczny</li>
+    </ul>
+  </section>
+
+  <!-- Sekcja "Usługi" -->
+  <section id="services">
+    <h2>Usługi</h2>
+    <p>Montuję TV, konfiguruję sieci, tworzę automatyzacje – zawsze z nutą technicznej elegancji.</p>
+  </section>
+
+  <!-- Sekcja "Bezpieczeństwo i alarmy" -->
+  <section id="security">
+    <h2>Bezpieczeństwo i alarmy</h2>
+    <div class="cards">
+      <!-- Pierwsza karta -->
+      <article class="card">
+        <h3>Alarmy z informacją wideo</h3>
+        <p>Integruję czujniki ruchu, drzwi/okien i dymu z kamerami IP w Home Assistant OS. W razie zdarzenia otrzymujesz powiadomienie z podglądem wideo i możliwość szybkiej reakcji.</p>
+        <ul>
+          <li><strong>Powiadomienia:</strong> push, e‑mail</li>
+          <li><strong>Kamera:</strong> podgląd na żywo i krótkie klipy</li>
+          <li><strong>Kontrola:</strong> uzbrajanie/rozbrajanie z aplikacji</li>
+        </ul>
+      </article>
+      <!-- Druga karta -->
+      <article class="card">
+        <h3>Dashboard HAOS</h3>
+        <p>Projektuję czytelne panele z widokiem kamer, stanem alarmu i przyciskami akcji. Każdy element ma swoje „miejsce w orkiestrze”, by reakcja była szybka i pewna.</p>
+        <ul>
+          <li><strong>Widoki:</strong> kamery, czujniki, logi</li>
+          <li><strong>Automatyzacje:</strong> scenariusze alarmowe</li>
+          <li><strong>Bezpieczeństwo:</strong> dostęp z lokalnej sieci lub VPN</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- Sekcja "Pomoc techniczna" -->
+  <section id="support">
+    <h2>Pomoc techniczna</h2>
+    <div class="cards">
+      <!-- Pierwsza karta -->
+      <article class="card">
+        <h3>Diagnostyka i naprawy</h3>
+        <p>Diagnozuję i naprawiam elektronikę na poziomie komponentów: TV, sprzęt RTV, komputery. Dokumentuję każdy etap, abyś miał pełen obraz działań.</p>
+        <ul>
+          <li><strong>Diagnoza:</strong> zasilanie, sygnały, układy</li>
+          <li><strong>Naprawy:</strong> wymiana elementów, rework</li>
+          <li><strong>Raport:</strong> czytelna dokumentacja</li>
+        </ul>
+      </article>
+      <!-- Druga karta -->
+      <article class="card">
+        <h3>Modernizacja
