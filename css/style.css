@@ -55,3 +55,12 @@ a:hover {
   transform: scale(1.1);            /* Powiększenie flagi po najechaniu */
   border-color: #ff7f11;            /* Zmiana koloru ramki */
 }
+/* Efekt łagodnego pojawiania się treści */
+body {
+  animation: fadeIn 1.5s ease-in;   /* uruchom animację przy starcie */
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }              /* zaczyna od przezroczystości */
+  to { opacity: 1; }                /* kończy pełną widocznością */
+}
