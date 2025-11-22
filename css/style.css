@@ -1,0 +1,57 @@
+/* ============================
+   Podstawowe ustawienia strony
+   ============================ */
+body {
+  font-family: Arial, sans-serif;   /* Czcionka dla całej strony */
+  background: #f4f4f4;              /* Kolor tła */
+  color: #222;                      /* Kolor tekstu */
+  text-align: center;               /* Wyrównanie tekstu do środka */
+  padding: 50px;                    /* Margines wewnętrzny wokół treści */
+}
+
+/* ============================
+   Nagłówki (h1, h2, h3)
+   ============================ */
+h1 {
+  color: #ff7f11;                   /* Pomarańczowy kolor nagłówka */
+  margin-bottom: 20px;              /* Odstęp pod nagłówkiem */
+}
+
+h2, h3 {
+  color: #415a77;                   /* Niebiesko-szary kolor dla mniejszych nagłówków */
+}
+
+/* ============================
+   Linki (np. powrót do strony głównej)
+   ============================ */
+a {
+  color: #415a77;                   /* Kolor linków */
+  text-decoration: none;            /* Usunięcie podkreślenia */
+  font-weight: bold;                /* Pogrubienie tekstu */
+}
+
+a:hover {
+  color: #ff7f11;                   /* Kolor po najechaniu myszką */
+  text-decoration: underline;       /* Podkreślenie po najechaniu */
+}
+
+/* ============================
+   Flagi językowe
+   ============================ */
+.flags {
+  margin-top: 40px;                 /* Odstęp od tekstu powyżej */
+}
+
+.flags img {
+  width: 80px;                      /* Szerokość obrazka flagi */
+  margin: 0 20px;                   /* Odstęp między flagami */
+  cursor: pointer;                  /* Zmiana kursora na "rączkę" */
+  border: 2px solid #415a77;        /* Ramka wokół flagi */
+  border-radius: 8px;               /* Zaokrąglenie rogów */
+  transition: transform 0.2s;       /* Animacja przy powiększeniu */
+}
+
+.flags img:hover {
+  transform: scale(1.1);            /* Powiększenie flagi po najechaniu */
+  border-color: #ff7f11;            /* Zmiana koloru ramki */
+}
