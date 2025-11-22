@@ -1,181 +1,43 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <!-- ====== STYLE DLA NOWYCH SEKCJI ====== -->
-<style>
-  /* Cards layout */
-  .cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 24px;
-    margin-top: 16px;
-  }
-  .card {
-    background: #1b263b;
-    border: 1px solid #415a77;
-    border-radius: 12px;
-    padding: 20px;
-    box-shadow: 0 6px 24px rgba(0,0,0,0.25);
-  }
-  .card h3 {
-    color: #ff7f11;
-    margin-top: 0;
-  }
-  .card ul {
-    list-style: none;
-    padding: 0;
-    margin: 12px 0 0 0;
-  }
-  .card ul li {
-    margin-bottom: 8px;
-  }
-  /* Section headings */
-  #security h2, #support h2 {
-    color: #e0e1dd;
-    border-left: 4px solid #ff7f11;
-    padding-left: 10px;
-  }
-  /* Accent specifics */
-  #security .card { border-color: #c94141; }
-  #support .card { border-color: #2e7bcf; }
-  /* Responsive spacing */
-  section#security, section#support {
-    padding-top: 24px;
-    padding-bottom: 24px;
-  }
-</style>
-
   <meta charset="UTF-8">
-  <title>WO61 – Techniczna Symfonia</title>
+  <title>Welcome to Wieslaw</title>
   <style>
     body {
-      font-family: 'Source Code Pro', monospace;
-      background-color: #0d1b2a;
+      font-family: Arial, sans-serif;
+      background: #0d1b2a;
       color: #e0e1dd;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      background: #1b263b;
-      padding: 20px;
       text-align: center;
+      padding: 50px;
     }
-    nav {
-      margin-top: 10px;
-    }
-    nav a {
-      color: #e0e1dd;
-      margin: 0 10px;
-      text-decoration: none;
-    }
-    section {
-      padding: 40px;
-      border-bottom: 1px solid #415a77;
-    }
-    h1, h2 {
+    h1 {
       color: #ff7f11;
     }
-    footer {
-      background: #1b263b;
-      text-align: center;
-      padding: 20px;
-      font-size: 0.8em;
+    .flags {
+      margin-top: 40px;
+    }
+    .flags img {
+      width: 80px;
+      margin: 0 20px;
+      cursor: pointer;
+      border: 2px solid #415a77;
+      border-radius: 8px;
+      transition: transform 0.2s;
+    }
+    .flags img:hover {
+      transform: scale(1.1);
+      border-color: #ff7f11;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>WO61 – Technika jako muzyka</h1>
-    <nav>
-      <a href="/pl">PL</a> | <a href="/en">EN</a> | <a href="/sv">SV</a>
-    </nav>
-  </header>
-
-  <section id="about">
-    <h2>O mnie</h2>
-    <p>Transformuję techniczne wyzwania w muzyczne rytuały. Od Home Assistanta po PLC – każdy projekt to nowa symfonia.</p>
-  </section>
-
-  <section id="projects">
-    <h2>Projekty</h2>
-    <ul>
-      <li>Home Assistant OS na Raspberry Pi – orkiestra urządzeń</li>
-      <li>VPN Fusion – cyfrowa orkiestra instrumentów</li>
-      <li>3D druk i CNC – warsztat symfoniczny</li>
-    </ul>
-  </section>
-
-  <section id="services">
-    <h2>Usługi</h2>
-    <p>Montuję TV, konfiguruję sieci, tworzę automatyzacje – zawsze z nutą technicznej elegancji.</p>
-  </section>
-  <!-- ====== BEZPIECZEŃSTWO I ALARMY ====== -->
-<section id="security">
-  <h2>Bezpieczeństwo i alarmy</h2>
-  <div class="cards">
-    <article class="card">
-      <h3>Alarmy z informacją wideo</h3>
-      <p>Integruję czujniki ruchu, drzwi/okien i dymu z kamerami IP w Home Assistant OS. W razie zdarzenia otrzymujesz powiadomienie z podglądem wideo i możliwość szybkiej reakcji.</p>
-      <ul>
-        <li><strong>Powiadomienia:</strong> push, e‑mail</li>
-        <li><strong>Kamera:</strong> podgląd na żywo i krótkie klipy</li>
-        <li><strong>Kontrola:</strong> uzbrajanie/rozbrajanie z aplikacji</li>
-      </ul>
-    </article>
-    <article class="card">
-      <h3>Dashboard HAOS</h3>
-      <p>Projektuję czytelne panele z widokiem kamer, stanem alarmu i przyciskami akcji. Każdy element ma swoje „miejsce w orkiestrze”, by reakcja była szybka i pewna.</p>
-      <ul>
-        <li><strong>Widoki:</strong> kamery, czujniki, logi</li>
-        <li><strong>Automatyzacje:</strong> scenariusze alarmowe</li>
-        <li><strong>Bezpieczeństwo:</strong> dostęp z lokalnej sieci lub VPN</li>
-      </ul>
-    </article>
+  <h1>Welcome to Wieslaw</h1>
+  <p>Choose your language:</p>
+  <div class="flags">
+    <a href="pl/index.html"><img src="images/flags/pl.png" alt="Polski"></a>
+    <a href="en/index.html"><img src="images/flags/en.png" alt="English"></a>
+    <a href="sv/index.html"><img src="images/flags/sv.png" alt="Svenska"></a>
   </div>
-</section>
-
-<!-- ====== POMOC TECHNICZNA ====== -->
-<section id="support">
-  <h2>Pomoc techniczna</h2>
-  <div class="cards">
-    <article class="card">
-      <h3>Diagnostyka i naprawy</h3>
-      <p>Diagnozuję i naprawiam elektronikę na poziomie komponentów: TV, sprzęt RTV, komputery. Dokumentuję każdy etap, abyś miał pełen obraz działań.</p>
-      <ul>
-        <li><strong>Diagnoza:</strong> zasilanie, sygnały, układy</li>
-        <li><strong>Naprawy:</strong> wymiana elementów, rework</li>
-        <li><strong>Raport:</strong> czytelna dokumentacja</li>
-      </ul>
-    </article>
-    <article class="card">
-      <h3>Modernizacja CNC i PLC</h3>
-      <p>Modernizuję starsze maszyny CNC: projektowanie zmian narzędzi, integracja sterowników PLC, dopasowanie oprogramowania i bezpieczeństw.</p>
-      <ul>
-        <li><strong>PLC:</strong> logika sterowania, I/O</li>
-        <li><strong>Narzędzia:</strong> wymiana, kalibracja</li>
-        <li><strong>Oprogramowanie:</strong> konfiguracja i testy</li>
-      </ul>
-    </article>
-    <article class="card">
-      <h3>Sieci, HAOS i VPN</h3>
-      <p>Pomagam w konfiguracji Home Assistanta, sieci domowych i połączeń VPN. Tworzę „zeszyty instalacyjne”, które prowadzą krok po kroku.</p>
-      <ul>
-        <li><strong>Konfiguracja:</strong> routery, Wi‑Fi, VLAN</li>
-        <li><strong>HAOS:</strong> dodatki, automatyzacje</li>
-        <li><strong>VPN:</strong> bezpieczny dostęp zdalny</li>
-      </ul>
-    </article>
-  </div>
-</section>
-
-
-  <section id="contact">
-    <h2>Kontakt</h2>
-    <p>Email: kontakt@wieslaw.pro</p>
-  </section>
-
-  <footer>
-    © 2025 Wiesław – wieslaw.pro
-  </footer>
 </body>
 </html>
