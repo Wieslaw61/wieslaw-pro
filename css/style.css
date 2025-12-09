@@ -44,11 +44,11 @@ p {
 }
 
 .flags img {
-  width: 80px;
-  margin: 0 20px;
+  width: 40px;              /* mniejsza szerokość */
+  margin: 0 10px;           /* mniejsze odstępy */
   cursor: pointer;
   border: 2px solid #415a77;
-  border-radius: 8px;
+  border-radius: 50%;       /* pełne zaokrąglenie (okrąg) */
   transition: transform 0.2s;
 }
 
