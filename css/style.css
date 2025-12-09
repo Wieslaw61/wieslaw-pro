@@ -1,3 +1,6 @@
+/* ============================
+   Podstawowe ustawienia strony
+   ============================ */
 html, body {
   height: 100%;
   margin: 0;
@@ -6,12 +9,12 @@ html, body {
 body {
   font-family: Arial, sans-serif;
   background-image: url("../images/background-chip.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: scroll; /* przewija się razem ze stroną */
+  background-size: cover;        /* dopasowanie */
+  background-position: center;   /* wyśrodkowanie */
+  background-repeat: no-repeat;  /* bez powtarzania */
+  background-attachment: fixed;  /* nieruchome tło */
   color: #e0e1dd;
-  text-align: left;   /* tekst wyrównany do lewej */
+  text-align: left;              /* tekst wyrównany do lewej */
   padding: 20px;
   animation: fadeIn 1.5s ease-in;
 }
@@ -21,20 +24,31 @@ body {
   to { opacity: 1; }
 }
 
-/* Nagłówek + języki w lewym górnym rogu */
-.lang-box {
-  position: fixed;
-  top: 20px;
-  left: 20px;
+/* ============================
+   Nagłówki
+   ============================ */
+h1 {
+  color: #ff7f11;
+  margin-bottom: 20px;
 }
 
-/* Flagi prostokątne z lekko zaokrąglonymi rogami */
+p {
+  margin-bottom: 20px;
+}
+
+/* ============================
+   Flagi językowe
+   ============================ */
+.flags {
+  margin-top: 20px;
+}
+
 .flags img {
-  width: 50px;
+  width: 60px;                   /* rozmiar flag */
   margin-right: 10px;
   cursor: pointer;
   border: 2px solid #415a77;
-  border-radius: 8px;   /* lekko zaokrąglone rogi */
+  border-radius: 8px;            /* lekko zaokrąglone rogi */
   transition: transform 0.2s;
 }
 
@@ -43,7 +57,9 @@ body {
   border-color: #ff7f11;
 }
 
-/* Przyciski fixed */
+/* ============================
+   Przyciski fixed
+   ============================ */
 .btn-fixed {
   position: fixed;
   bottom: 20px;
