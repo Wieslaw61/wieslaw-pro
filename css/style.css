@@ -8,15 +8,14 @@ html, body {
 
 body {
   font-family: Arial, sans-serif;
-body {
-  background-image: url("../images/background-chip.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: scroll; /* tło przewija się razem ze stroną */
+  background-image: url("../images/background-chip.jpg"); /* obraz tła */
+  background-size: cover;        /* dopasowanie */
+  background-position: center;   /* wyśrodkowanie */
+  background-repeat: no-repeat;  /* bez powtarzania */
+  background-attachment: scroll; /* przewija się razem ze stroną */
   color: #e0e1dd;
-  text-align: left;              /* tekst wyrównany do lewej */
-  padding: 20px;
+  text-align: center;            /* wyśrodkowanie treści */
+  padding: 50px;
   animation: fadeIn 1.5s ease-in;
 }
 
@@ -33,58 +32,29 @@ h1 {
   margin-bottom: 20px;
 }
 
-h2, h3 {
-  color: #415a77;
+p {
+  margin-bottom: 20px;
 }
 
 /* ============================
-   Linki
+   Flagi językowe
    ============================ */
-a {
-  color: #415a77;
-  text-decoration: none;
-  font-weight: bold;
+.flags {
+  margin-top: 20px;
 }
 
-a:hover {
-  color: #ff7f11;
-  text-decoration: underline;
-}
-
-/* ============================
-   Flagi fixed
-   ============================ */
-.flags-fixed {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  display: flex;
-  gap: 10px;
-}
-
-.flags-fixed img {
-  width: 50px;
+.flags img {
+  width: 80px;
+  margin: 0 20px;
   cursor: pointer;
   border: 2px solid #415a77;
   border-radius: 8px;
   transition: transform 0.2s;
 }
 
-.flags-fixed img:hover {
+.flags img:hover {
   transform: scale(1.1);
   border-color: #ff7f11;
-}
-
-/* ============================
-   Napis fixed
-   ============================ */
-.lang-label {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  font-size: 20px;
-  color: #fff;
-  text-shadow: 0 0 5px #00f; /* neonowy efekt */
 }
 
 /* ============================
