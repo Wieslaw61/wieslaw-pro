@@ -1,6 +1,3 @@
-/* ============================
-   Podstawowe ustawienia strony
-   ============================ */
 html, body {
   height: 100%;
   margin: 0;
@@ -8,14 +5,14 @@ html, body {
 
 body {
   font-family: Arial, sans-serif;
-  background-image: url("../images/background-chip.jpg"); /* obraz tła */
-  background-size: cover;        /* dopasowanie */
-  background-position: center;   /* wyśrodkowanie */
-  background-repeat: no-repeat;  /* bez powtarzania */
+  background-image: url("../images/background-chip.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   background-attachment: scroll; /* przewija się razem ze stroną */
   color: #e0e1dd;
-  text-align: center;            /* wyśrodkowanie treści */
-  padding: 50px;
+  text-align: left;   /* tekst wyrównany do lewej */
+  padding: 20px;
   animation: fadeIn 1.5s ease-in;
 }
 
@@ -24,31 +21,20 @@ body {
   to { opacity: 1; }
 }
 
-/* ============================
-   Nagłówki
-   ============================ */
-h1 {
-  color: #ff7f11;
-  margin-bottom: 20px;
+/* Nagłówek + języki w lewym górnym rogu */
+.lang-box {
+  position: fixed;
+  top: 20px;
+  left: 20px;
 }
 
-p {
-  margin-bottom: 20px;
-}
-
-/* ============================
-   Flagi językowe
-   ============================ */
-.flags {
-  margin-top: 20px;
-}
-
+/* Flagi prostokątne z lekko zaokrąglonymi rogami */
 .flags img {
-  width: 40px;              /* mniejsza szerokość */
-  margin: 0 10px;           /* mniejsze odstępy */
+  width: 50px;
+  margin-right: 10px;
   cursor: pointer;
   border: 2px solid #415a77;
-  border-radius: 50%;       /* pełne zaokrąglenie (okrąg) */
+  border-radius: 8px;   /* lekko zaokrąglone rogi */
   transition: transform 0.2s;
 }
 
@@ -57,9 +43,7 @@ p {
   border-color: #ff7f11;
 }
 
-/* ============================
-   Przyciski fixed
-   ============================ */
+/* Przyciski fixed */
 .btn-fixed {
   position: fixed;
   bottom: 20px;
@@ -78,10 +62,5 @@ p {
   transform: scale(1.05);
 }
 
-.btn-fixed.right {
-  right: 20px;
-}
-
-.btn-fixed.left {
-  left: 20px;
-}
+.btn-fixed.right { right: 20px; }
+.btn-fixed.left { left: 20px; }
