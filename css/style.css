@@ -1,66 +1,116 @@
 /* ============================
    Podstawowe ustawienia strony
    ============================ */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
 body {
-  font-family: Arial, sans-serif;   /* Czcionka dla całej strony */
-  background: #0d1b2a;              /* Kolor tła */
-  color: #e0e1dd;                      /* Kolor tekstu */
-  text-align: center;               /* Wyrównanie tekstu do środka */
-  padding: 50px;                    /* Margines wewnętrzny wokół treści */
-}
-
-/* ============================
-   Nagłówki (h1, h2, h3)
-   ============================ */
-h1 {
-  color: #ff7f11;                   /* Pomarańczowy kolor nagłówka */
-  margin-bottom: 20px;              /* Odstęp pod nagłówkiem */
-}
-
-h2, h3 {
-  color: #415a77;                   /* Niebiesko-szary kolor dla mniejszych nagłówków */
-}
-
-/* ============================
-   Linki (np. powrót do strony głównej)
-   ============================ */
-a {
-  color: #415a77;                   /* Kolor linków */
-  text-decoration: none;            /* Usunięcie podkreślenia */
-  font-weight: bold;                /* Pogrubienie tekstu */
-}
-
-a:hover {
-  color: #ff7f11;                   /* Kolor po najechaniu myszką */
-  text-decoration: underline;       /* Podkreślenie po najechaniu */
-}
-
-/* ============================
-   Flagi językowe
-   ============================ */
-.flags {
-  margin-top: 40px;                 /* Odstęp od tekstu powyżej */
-}
-
-.flags img {
-  width: 80px;                      /* Szerokość obrazka flagi */
-  margin: 0 20px;                   /* Odstęp między flagami */
-  cursor: pointer;                  /* Zmiana kursora na "rączkę" */
-  border: 2px solid #415a77;        /* Ramka wokół flagi */
-  border-radius: 8px;               /* Zaokrąglenie rogów */
-  transition: transform 0.2s;       /* Animacja przy powiększeniu */
-}
-
-.flags img:hover {
-  transform: scale(1.1);            /* Powiększenie flagi po najechaniu */
-  border-color: #ff7f11;            /* Zmiana koloru ramki */
-}
-/* Efekt łagodnego pojawiania się treści */
-body {
-  animation: fadeIn 1.5s ease-in;   /* uruchom animację przy starcie */
+  font-family: Arial, sans-serif;
+  background-image: url("../images/background-chip.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;   /* tło nieruchome */
+  color: #e0e1dd;
+  text-align: center;
+  padding: 50px;
+  animation: fadeIn 1.5s ease-in;
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }              /* zaczyna od przezroczystości */
-  to { opacity: 1; }                /* kończy pełną widocznością */
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ============================
+   Nagłówki
+   ============================ */
+h1 {
+  color: #ff7f11;
+  margin-bottom: 20px;
+}
+
+h2, h3 {
+  color: #415a77;
+}
+
+/* ============================
+   Linki
+   ============================ */
+a {
+  color: #415a77;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #ff7f11;
+  text-decoration: underline;
+}
+
+/* ============================
+   Flagi fixed
+   ============================ */
+.flags-fixed {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.flags-fixed img {
+  width: 50px;
+  cursor: pointer;
+  border: 2px solid #415a77;
+  border-radius: 8px;
+  transition: transform 0.2s;
+}
+
+.flags-fixed img:hover {
+  transform: scale(1.1);
+  border-color: #ff7f11;
+}
+
+/* ============================
+   Napis fixed
+   ============================ */
+.lang-label {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  font-size: 20px;
+  color: #fff;
+  text-shadow: 0 0 5px #00f; /* neonowy efekt */
+}
+
+/* ============================
+   Przyciski fixed
+   ============================ */
+.btn-fixed {
+  position: fixed;
+  bottom: 20px;
+  padding: 10px 20px;
+  background-color: rgba(65, 90, 119, 0.7);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.btn-fixed:hover {
+  background-color: rgba(255, 127, 17, 0.9);
+  transform: scale(1.05);
+}
+
+.btn-fixed.right {
+  right: 20px;
+}
+
+.btn-fixed.left {
+  left: 20px;
 }
