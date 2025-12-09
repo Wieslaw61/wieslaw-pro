@@ -1,0 +1,243 @@
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wiesław | Inżynieria i Kosmos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        futura: ['Orbitron', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#6366f1', // Indigo
+                        secondary: '#10b981', // Emerald
+                        space: '#050510', // Deep dark space
+                        neon: '#00f3ff', // Cyan neon
+                        'neon-green': '#0f0',
+                    },
+                    animation: {
+                        'spin-slow': 'spin 20s linear infinite',
+                        'pulse-slow': 'pulse 5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'float-delayed': 'float 8s ease-in-out infinite 2s',
+                        'crawl': 'crawl 40s linear infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0) rotate(0deg)' },
+                            '50%': { transform: 'translateY(-20px) rotate(5deg)' },
+                        },
+                        crawl: {
+                            '0%': { transform: 'translateY(100%) rotateX(25deg)' },
+                            '100%': { transform: 'translateY(-200%) rotateX(25deg)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Hide scrollbar */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        /* Space Background Effects */
+        .space-bg {
+            background: radial-gradient(circle at center, #0b0b15 0%, #000000 100%);
+            overflow-x: hidden; /* Fix dla nadmiarowego scrolla */
+            perspective: 1000px; /* Essential for 3D effects */
+        }
+
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            border-radius: 50%;
+            opacity: 0;
+            animation: twinkle var(--duration) ease-in-out infinite;
+            animation-delay: var(--delay);
+        }
+
+        @keyframes twinkle {
+            0% { opacity: 0; transform: scale(0.5); }
+            50% { opacity: 1; transform: scale(1.2); }
+            100% { opacity: 0; transform: scale(0.5); }
+        }
+
+        /* Star Wars Crawl Container */
+        .crawl-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            transform-style: preserve-3d;
+            overflow: hidden;
+            z-index: 0;
+            opacity: 0.15; /* Subtle visibility */
+            pointer-events: none;
+        }
+
+        .crawl-text {
+            color: #00f3ff;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            text-align: center;
+            width: 80%;
+            transform-origin: 50% 100%;
+            animation: crawl 40s linear infinite;
+            font-size: 1.5rem;
+            line-height: 1.5;
+            text-shadow: 0 0 5px rgba(0, 243, 255, 0.5);
+        }
+
+        /* Circuit Lines */
+        .circuit-line {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: dash 5s linear infinite;
+        }
+
+        @keyframes dash {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+        
+        .black-hole-glow {
+            background: radial-gradient(circle, rgba(99,102,241,0.3) 0%, rgba(0,0,0,0) 70%);
+            filter: blur(40px);
+        }
+    </style>
+</head>
+
+<body class="bg-space text-white font-sans antialiased no-scrollbar">
+    
+    <div class="space-bg min-h-screen relative overflow-hidden">
+
+        <div id="star-field" class="absolute inset-0 z-0"></div>
+        <div class="crawl-container">
+            <div class="crawl-text">
+                <p>🛰️ Dane telemetryczne wskazują na nowy horyzont.</p>
+                <p>WIESŁAW: Inżynieria poza Ziemię.</p>
+                <p>Projektowanie przyszłości. Misja rozpoczęta: Ziemia 2025.</p>
+                <p>Przekraczanie barier materii i przestrzeni.</p>
+            </div>
+        </div>
+        <header class="relative z-10 p-6 pt-12 md:p-12 text-center">
+            <h1 class="font-futura text-5xl md:text-8xl text-neon-green mb-4 leading-tight animate-pulse-slow">
+                WIESŁAW
+            </h1>
+            <p class="text-secondary text-lg md:text-xl border-b-4 border-primary pb-3 max-w-3xl mx-auto shadow-lg shadow-neon/10">
+                INŻYNIERIA KOSMICZNA | TECHNOLOGIE PRZYSZŁOŚCI
+            </p>
+        </header>
+
+        <main class="relative z-10 p-6 md:p-12 max-w-7xl mx-auto">
+            
+            <section id="o-mnie" class="mb-20 text-center">
+                <div class="relative bg-space/70 p-8 md:p-12 rounded-2xl border border-neon/40 backdrop-blur-md shadow-2xl shadow-neon/20">
+                    <div class="black-hole-glow absolute -top-16 -left-16 w-32 h-32"></div>
+
+                    <h2 class="text-3xl font-futura text-neon mb-6">🛰️ MISJA: OD TYLNEJ FURTKI DO GWIAZD</h2>
+                    <p class="text-white text-lg max-w-4xl mx-auto leading-relaxed">
+                        Od lat projektuję i buduję systemy, które miały pozostać w sferze teorii. Moja praca łączy precyzję, zaawansowaną naukę o materiałach i wizję dalekiego kosmosu. Zapraszam do zapoznania się z moimi projektami — to nie są symulacje.
+                    </p>
+                </div>
+            </section>
+
+            <section id="projekty" class="mb-20">
+                <h2 class="text-4xl font-futura text-primary text-center mb-10 border-b border-primary/50 pb-4">PROJEKTY ZAAWANSOWANE</h2>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    
+                    <article class="p-6 bg-space/70 border-4 border-secondary/50 rounded-xl shadow-xl hover:shadow-secondary transition duration-500 transform hover:scale-[1.03]">
+                        <div class="flex justify-between items-center mb-3">
+                            <h3 class="text-2xl font-futura text-secondary">NAPĘD ANTYMATERII</h3>
+                            <svg class="w-8 h-8 text-secondary animate-spin-slow" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.836 2.582l-3.328 3.328m-1.579 1.58L.001 24.001"/></svg>
+                        </div>
+                        <p class="text-white text-sm">Prototyp teoretycznego napędu zdolnego do osiągnięcia 10% prędkości światła. Osiągnięto stabilizację kwantową pola. Status: Testy laboratoryjne.</p>
+                        <a href="#" class="mt-4 inline-block text-sm text-secondary hover:text-white font-bold border-b border-secondary">Więcej informacji</a>
+                    </article>
+
+                    <article class="p-6 bg-space/70 border-4 border-neon/50 rounded-xl shadow-xl hover:shadow-neon transition duration-500 transform hover:scale-[1.03]">
+                        <div class="flex justify-between items-center mb-3">
+                            <h3 class="text-2xl font-futura text-neon">MODUŁ ORBITALNY</h3>
+                            <svg class="w-8 h-8 text-neon animate-float-delayed" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10m-8-4l8 4"/></svg>
+                        </div>
+                        <p class="text-white text-sm">Autonomiczny moduł badawczy "SYNERGY", zaprojektowany do długotrwałych misji na granicy atmosfery. Odporny na promieniowanie kosmiczne.</p>
+                        <a href="#" class="mt-4 inline-block text-sm text-neon hover:text-white font-bold border-b border-neon">Raport Misji</a>
+                    </article>
+
+                    <article class="p-6 bg-space/70 border-4 border-primary/50 rounded-xl shadow-xl hover:shadow-primary transition duration-500 transform hover:scale-[1.03]">
+                        <div class="flex justify-between items-center mb-3">
+                            <h3 class="text-2xl font-futura text-primary">KWANTOWY KOREKTOR</h3>
+                            <svg class="w-8 h-8 text-primary animate-pulse" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.5l6 6L12 16.5 6 10.5 12 4.5z"/></svg>
+                        </div>
+                        <p class="text-white text-sm">Opracowanie stabilnego procesora kwantowego chłodzonego helium-3, minimalizującego dekoherencję. Skuteczność: 98,7%.</p>
+                        <a href="#" class="mt-4 inline-block text-sm text-primary hover:text-white font-bold border-b border-primary">Dokumentacja</a>
+                    </article>
+                </div>
+            </section>
+            
+            <section id="kontakt" class="mb-20 max-w-3xl mx-auto">
+                <h2 class="text-4xl font-futura text-neon text-center mb-10 border-b border-neon/50 pb-4">NADAJ KOMUNIKAT</h2>
+                
+                <form class="bg-space/80 p-8 rounded-xl border border-primary/50 shadow-2xl shadow-primary/20">
+                    <div class="mb-6">
+                        <label for="name" class="block text-primary text-sm font-bold mb-2 font-futura">Nazwa / Podmiot:</label>
+                        <input type="text" id="name" class="shadow appearance-none border border-primary/50 rounded w-full py-3 px-4 text-white leading-tight focus:outline-none focus:ring-2 focus:ring-neon bg-space" placeholder="Twój identyfikator" required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="email" class="block text-primary text-sm font-bold mb-2 font-futura">Adres Powrotny (Email):</label>
+                        <input type="email" id="email" class="shadow appearance-none border border-primary/50 rounded w-full py-3 px-4 text-white leading-tight focus:outline-none focus:ring-2 focus:ring-neon bg-space" placeholder="example@system.com" required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="message" class="block text-primary text-sm font-bold mb-2 font-futura">Treść Komunikatu:</label>
+                        <textarea id="message" rows="5" class="shadow appearance-none border border-primary/50 rounded w-full py-3 px-4 text-white leading-tight focus:outline-none focus:ring-2 focus:ring-neon bg-space" placeholder="Podaj współrzędne lub cel misji..." required></textarea>
+                    </div>
+                    <div class="flex justify-center">
+                        <button type="submit" class="bg-primary hover:bg-secondary text-white font-bold py-3 px-6 rounded-full focus:outline-none focus:shadow-outline transition duration-300 font-futura shadow-lg shadow-primary/50 hover:shadow-secondary/50">
+                            WYŚLIJ W PRZESTRZEŃ
+                        </button>
+                    </div>
+                </form>
+            </section>
+        </main>
+        
+        <footer class="relative z-10 mt-16 p-6 md:p-10 text-center text-primary border-t-4 border-neon/50 shadow-2xl shadow-neon/10 bg-space/80">
+            <p class="font-futura text-lg">&copy; 2025 WIESŁAW | Baza Operacyjna: LEO 5</p>
+            <p class="text-sm text-secondary mt-2">Wszystkie prawa zastrzeżone. Nie replikować.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        // Skrypt generujący gwiazdy dla efektu space-bg
+        const starField = document.getElementById('star-field');
+        if (starField) {
+            for (let i = 0; i < 150; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.left = `${Math.random() * 100}%`;
+                star.style.top = `${Math.random() * 100}%`;
+                star.style.setProperty('--duration', `${Math.random() * 5 + 2}s`);
+                star.style.setProperty('--delay', `${Math.random() * 5}s`);
+                starField.appendChild(star);
+            }
+        }
+    </script>
+</body>
+</html>

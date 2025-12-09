@@ -9,10 +9,15 @@
       font-family: Arial, sans-serif;
       background: #0d1b2a;
       color: #e0e1dd;
-      text-align: center;
-      padding: 50px;
+      text-align: left;
+      padding: 20px;
     }
     /* Tło strony tytułowej */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
 body {
   background-image: url("../images/background-chip.jpg"); /* ścieżka do obrazu */
   background-size: cover;        /* dopasowanie do całej strony */
@@ -21,7 +26,7 @@ body {
   color: #e0e1dd;                /* jasny tekst na ciemnym tle */
   font-family: Arial, sans-serif;
   text-align: center;
-  padding: 50px;
+  padding: 20px;
 }
     h1 {
       color: #ff7f11;
@@ -51,5 +56,13 @@ body {
     <a href="en/index.html"><img src="images/flags/en.png" alt="English"></a>
     <a href="sv/index.html"><img src="images/flags/sv.png" alt="Svenska"></a>
   </div>
+
+  <!-- Nowy przycisk Future -->
+<div style="margin-top: 40px;">
+  <button onclick="window.location.href='future/index.html'">
+    Future
+  </button>
+</div>
+
 </body>
 </html>
