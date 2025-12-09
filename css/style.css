@@ -8,11 +8,12 @@ html, body {
 
 body {
   font-family: Arial, sans-serif;
-  background-image: url("../images/background-chip.jpg"); /* poprawna ścieżka */
-  background-size: cover;        /* dopasowanie */
-  background-position: center;   /* wyśrodkowanie */
-  background-repeat: no-repeat;  /* bez powtarzania */
-  background-attachment: fixed;  /* nieruchome tło */
+body {
+  background-image: url("../images/background-chip.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll; /* tło przewija się razem ze stroną */
   color: #e0e1dd;
   text-align: left;              /* tekst wyrównany do lewej */
   padding: 20px;
